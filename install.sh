@@ -98,9 +98,9 @@ if ! command -v xcode-select &>/dev/null; then
 fi
 
 if [ $appleChip == "arm64" ];then
-    EmuDeckURL="$(getLatestReleaseURLGH "EmuDeck/emudeck-electron" "arm64.dmg")"
+    EmuDeckURL="$(getLatestReleaseURLGH "EmuDeck/emudeck-electron-beta" "arm64.dmg")"
 else
-    EmuDeckURL="$(getLatestReleaseURLGH "EmuDeck/emudeck-electron" ".dmg")"
+    EmuDeckURL="$(getLatestReleaseURLGH "EmuDeck/emudeck-electron-beta" ".dmg")"
 fi
 
 safeDownload "EmuDeck" "$EmuDeckURL" "$HOME/Downloads/EmuDeck.dmg" && open "$HOME/Downloads/EmuDeck.dmg"
