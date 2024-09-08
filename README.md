@@ -1,0 +1,2 @@
+# emudeck-darwin
+macOS
