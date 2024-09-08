@@ -3,7 +3,7 @@
 
 #SRM
 SRM_toolPath="$HOME/Applications/EmuDeck/Steam ROM Manager.app"
-SRM_userData_directory="darwin/configs/steam-rom-manager/userData"
+SRM_userData_directory="configs/steam-rom-manager/userData"
 SRM_userData_configDir="$HOME/Library/Application Support/steam-rom-manager/userData"
 steam_input_templateFolder="$HOME/Library/Application Support/Steam/Steam.AppBundle/Steam/Contents/MacOS/controller_base/templates/"
 
@@ -21,7 +21,7 @@ RetroArch_coresExtension="dylib.zip"
 #ESDE
 ESDE_toolPath="$HOME/Applications/EmuDeck/ES-DE/ES-DE.dmg"
 ESDE_toolPathExe="$HOME/Applications/EmuDeck/ES-DE/ES-DE.app" # Download
-ESDE_addSteamInputFile="$EMUDECKGIT/darwin/configs/steam-input/emulationstation-de_controller_config.vdf"
+ESDE_addSteamInputFile="$EMUDECKGIT/configs/steam-input/emulationstation-de_controller_config.vdf"
 
 #Pegasus
 pegasus_emuPath="pegasus-frontend"

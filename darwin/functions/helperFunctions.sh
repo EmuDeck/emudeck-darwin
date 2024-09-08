@@ -36,7 +36,7 @@ function darwin_installEmuDMG(){
 		rm -f "$f"
 	done
 
-	find "${EMUDECKGIT}/darwin/tools/launchers/" -type f -iname "$shName.sh" -o -type f -iname "$shName-emu.sh" | \
+	find "${EMUDECKGIT}/tools/launchers/" -type f -iname "$shName.sh" -o -type f -iname "$shName-emu.sh" | \
 	while read -r l
 	do
 		echo "deploying $l"
@@ -70,7 +70,7 @@ function darwin_installEmuZip(){
 		rm -f "$f"
 	done
 
-	find "${EMUDECKGIT}/darwin/tools/launchers/" -maxdepth 1 -type f -iname "$shName.sh" -o -type f -iname "$shName-emu.sh" -o -type f -iname "$shName-frontend.sh" | \
+	find "${EMUDECKGIT}/tools/launchers/" -maxdepth 1 -type f -iname "$shName.sh" -o -type f -iname "$shName-emu.sh" -o -type f -iname "$shName-frontend.sh" | \
 	while read -r l
 	do
 		echo "deploying $l"
@@ -90,9 +90,9 @@ function darwin_generateAppfromSH(){
 	rm -rf "/Applications/Emulators/$appName.app"
 	mkdir -p "/Applications/Emulators/$appName.app/Contents/MacOS"
 	#chmod +x "/Applications/Emulators/$appName.app"
-	cp "./darwin/tools/appGenerator/Automator Application Stub" "/Applications/Emulators/$appName.app/Contents/MacOS/"
-	cp "./darwin/tools/appGenerator/document.wflow" "/Applications/Emulators/$appName.app/Contents/"
-	cp "./darwin/tools/appGenerator/Info.plist" "/Applications/Emulators/$appName.app/Contents/"
+	cp "./tools/appGenerator/Automator Application Stub" "/Applications/Emulators/$appName.app/Contents/MacOS/"
+	cp "./tools/appGenerator/document.wflow" "/Applications/Emulators/$appName.app/Contents/"
+	cp "./tools/appGenerator/Info.plist" "/Applications/Emulators/$appName.app/Contents/"
 	sed -i "s|EMUDECKEMULATOR|${appName}|g" "/Applications/Emulators/$appName.app/Contents/document.wflow"
 	sed -i "s|/run/media/mmcblk0p1/Emulation/tools|${toolsPath}|g" "/Applications/Emulators/$appName.app/Contents/document.wflow"
 }
