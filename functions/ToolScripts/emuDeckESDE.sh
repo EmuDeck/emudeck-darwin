@@ -19,6 +19,8 @@ es_systemsFile="$ESDE_newConfigDirectory/custom_systems/es_systems.xml"
 es_settingsFile="$ESDE_newConfigDirectory/settings/es_settings.xml"
 es_rulesFile="$ESDE_newConfigDirectory/custom_systems/es_find_rules.xml"
 
+#darwin overrides
+source "$EMUDECKGIT"/darwin/functions/all.sh
 
 ESDE_SetAppImageURLS() {
     local json="$(curl -s $ESDE_releaseJSON)"
@@ -484,3 +486,5 @@ ESDE_flushToolLauncher(){
 	cp "$EMUDECKGIT/tools/launchers/es-de/es-de.sh" "$toolsPath/launchers/es-de/es-de.sh"
 	chmod +x "$toolsPath/launchers/es-de/es-de.sh"
 }
+#darwin overrides
+source "$EMUDECKGIT"/darwin/functions/all.sh

@@ -6,7 +6,8 @@ SRM_toolPath="${toolsPath}/Steam-ROM-Manager.AppImage"
 SRM_userData_directory="configs/steam-rom-manager/userData"
 SRM_userData_configDir="$HOME/.config/steam-rom-manager/userData"
 #cleanupOlderThings
-
+#darwin overrides
+source "$EMUDECKGIT"/darwin/functions/all.sh
 SRM_install(){
   setMSG "Installing Steam ROM Manager"
   local showProgress="$1"
@@ -223,3 +224,5 @@ SRM_deleteCache(){
     fi
 
 }
+#darwin overrides
+source "$EMUDECKGIT"/darwin/functions/all.sh

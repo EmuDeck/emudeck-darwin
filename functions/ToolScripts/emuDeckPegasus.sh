@@ -6,7 +6,8 @@ pegasus_path="$HOME/.config/$pegasus_emuPath"
 pegasus_dir_file="$pegasus_path/game_dirs.txt"
 pegasus_config_file="$pegasus_path/settings.txt"
 pegasus_themes_path="$pegasus_path/themes"
-
+#darwin overrides
+source "$EMUDECKGIT"/darwin/functions/all.sh
 #cleanupOlderThings
 pegasus_cleanup(){
 	echo "NYI"
@@ -241,3 +242,5 @@ pegasus_flushToolLauncher(){
 	cp "$EMUDECKGIT/tools/launchers/pegasus/pegasus-frontend.sh" "$toolsPath/launchers/pegasus/pegasus-frontend.sh"
 	chmod +x "$toolsPath/launchers/pegasus/pegasus-frontend.sh"
 }
+#darwin overrides
+source "$EMUDECKGIT"/darwin/functions/all.sh
