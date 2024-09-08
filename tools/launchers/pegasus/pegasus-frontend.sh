@@ -1,6 +1,7 @@
 #!/bin/bash
-. "$HOME/.config/EmuDeck/backend/functions/all.sh"
-#. "$HOME/.config/EmuDeck/backend/tools/rom-parser.sh"
-cloud_sync_downloadEmuAll && cloud_sync_startService
-$HOME/Applications/pegasus-fe "${@}"
-rm -rf "$savesPath/.gaming"
+#source $HOME/.config/EmuDeck/backend/functions/all.sh
+#cloud_sync_downloadEmuAll && cloud_sync_startService
+source $HOME/.config/EmuDeck/backend/tools/rom-parser.sh
+open "/Applications/Pegasus.app" --args "${@}"
+
+#rm -rf "$savesPath/.gaming"
