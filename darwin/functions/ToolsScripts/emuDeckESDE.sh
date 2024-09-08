@@ -1,7 +1,7 @@
 #!/bin/bash
 function ESDE_customDesktopShortcut(){
 	mkdir -p "$toolsPath/launchers/es-de"
-	cp "$EMUDECKGIT/darwin/tools/launchers/es-de/es-de.sh" "$toolsPath/launchers/es-de/ES-DE.sh"
+	cp "$EMUDECKGIT/tools/launchers/es-de/es-de.sh" "$toolsPath/launchers/es-de/ES-DE.sh"
 	darwin_ESDE_GenerateApp "$toolsPath/launchers/es-de/ES-DE.sh"
 }
 
@@ -24,9 +24,9 @@ function darwin_ESDE_GenerateApp(){
 	rm -rf "/Applications/$appName.app"
 	mkdir -p "/Applications/$appName.app/Contents/MacOS"
 	#chmod +x "/Applications/Emulators/$appName.app"
-	cp "./darwin/tools/appGenerator/Automator Application Stub" "/Applications/$appName.app/Contents/MacOS/"
-	cp "./darwin/tools/appGenerator/document.wflow" "/Applications/$appName.app/Contents/"
-	cp "./darwin/tools/appGenerator/Info.plist" "/Applications/$appName.app/Contents/"
+	cp "$EMUDECKGIT/tools/appGenerator/Automator Application Stub" "/Applications/$appName.app/Contents/MacOS/"
+	cp "$EMUDECKGIT/tools/appGenerator/document.wflow" "/Applications/$appName.app/Contents/"
+	cp "$EMUDECKGIT/tools/appGenerator/Info.plist" "/Applications/$appName.app/Contents/"
 	sed -i "s|EMUDECKEMULATOR|es-de/${appName}|g" "/Applications/$appName.app/Contents/document.wflow"
 	sed -i "s|/run/media/mmcblk0p1/Emulation/tools|${toolsPath}|g" "/Applications/$appName.app/Contents/document.wflow"
 	fileicon set /Applications/ES-DE.app "$HOME/.config/EmuDeck/backend/icons/ES-DE.png"
@@ -58,7 +58,7 @@ ESDE_uninstall(){
 
 ESDE_createLauncher(){
  mkdir -p "$toolsPath/launchers/es-de"
- cp -r "$EMUDECKGIT/darwin/tools/launchers/es-de/es-de.sh" "$toolsPath/launchers/es-de/ES-DE.sh" && chmod +x "$toolsPath/launchers/es-de/ES-DE.sh"
+ cp -r "$EMUDECKGIT/tools/launchers/es-de/es-de.sh" "$toolsPath/launchers/es-de/ES-DE.sh" && chmod +x "$toolsPath/launchers/es-de/ES-DE.sh"
 }
 
 ESDE_flushToolLauncher(){
